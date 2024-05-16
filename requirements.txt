@@ -22,8 +22,6 @@ click==8.1.7
 colorama==0.4.6
 comm==0.2.2
 contourpy==1.2.1
-# Editable install with no version control (csv-agent==0.0.1)
--e d:\my-app\packages\csv-agent
 cycler==0.12.1
 dataclasses-json==0.6.6
 debugpy==1.8.1
