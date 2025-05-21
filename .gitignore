@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+ENV/
+VENV/
+*.egg-info/
+.installed.cfg
+*.egg
+pip-log.txt
+pip-delete-this-directory.txt
+
+# IDE specific
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Temporary files from the project
+temp_summarization_files/
+*.log
+
+# Output files
+# Assuming translated documents (e.g., *.docx) should not be committed by default.
+*.docx
+
+# Test files specific
+tests/__pycache__/

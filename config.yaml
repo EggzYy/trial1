@@ -1,0 +1,19 @@
+llm_provider:
+  api_key: "ollama"
+  base_url: "YOUR_NGROK_URL_HERE/v1" # Path for autogen agents, user needs to update this
+  model: "deepseek-r1:32b-qwen-distill-q8_0"
+  ollama_base_url: "YOUR_NGROK_URL_HERE" # Path for Ollama client via OpenAI class, user needs to update this
+
+translation:
+  source_language: "English"
+  target_language: "Turkish"
+  country: "Turkey"
+
+files:
+  input_file: "Surrender_No_preface.docx"
+  output_file: "output_deepseek_32.docx"
+
+autogen_configs: # For the agent config_list
+  - model: "deepseek-r1:32b-qwen-distill-q8_0"
+    base_url: "YOUR_NGROK_URL_HERE/v1" # Matches llm_provider.base_url, user needs to update this
+    api_key: "ollama" # Matches llm_provider.api_key

@@ -51,6 +51,13 @@ class Usage:
 
 # --- Abstract LLM Provider Class ---
 class LLMProvider:
+    """
+    Abstract base class for Large Language Model (LLM) providers.
+
+    This class defines the interface that all LLM provider implementations
+    should adhere to. It includes methods for calculating token counts,
+    splitting text, and getting completions from an LLM.
+    """
     def __init__(self) -> None:
         """Initialize the LLM provider"""
         self.model: str = ""
@@ -86,10 +93,20 @@ class LLMProvider:
 # --- OpenAI Compatible LLM Provider ---
 class OpenAICompatible(LLMProvider):
     """
-    A base class for LLM providers that are compatible with the OpenAI API.
+    A base class for LLM providers that are compatible with the OpenAI API structure,
+    particularly for models accessed via a custom client like Ollama's.
+    It handles token calculation using tiktoken and provides a common structure
+    for splitting text and getting completions.
     """
     def __init__(self, client, base_url=None, **kwargs):
-        """Initializes the OpenAI compatible client"""
+        """
+        Initializes the OpenAI compatible client.
+
+        Args:
+            client: The client object used to interact with the LLM (e.g., Ollama client).
+            base_url (Optional[str]): The base URL of the LLM API.
+            **kwargs: Additional keyword arguments, including 'model' for the model name.
+        """
         self.client = client
         self.model = kwargs.get("model", "")
         #self.temperature = kwargs.get("temperature", 0.1)
