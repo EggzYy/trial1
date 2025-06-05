@@ -820,7 +820,7 @@ def summarize_document(provider: LLMProviderWrapper, text_chunks: list[str], max
                                 ),
                                 "system_message": PROMPT_SUMMARIZE_DOCUMENT_SYSTEM
                             }]
-                            expansion_response = _call_llm(provider, expansion_messages)
+                            expansion_response = _call_llm(self.llm_provider, expansion_messages)
                             if isinstance(expansion_response, dict) and "content" in expansion_response:
                                 
                                 llm_response_file_ex = os.path.join(temp_dir, f"llm_response_ex{unique_id}.txt")
@@ -1405,7 +1405,7 @@ class UniversalTranslator:
                                 document_category = self.document_category
                                 )
                             }]
-                            expansion_response = _call_llm(provider, expansion_messages)
+                            expansion_response = _call_llm(self.llm_provider, expansion_messages)
                             if isinstance(expansion_response, dict) and "content" in expansion_response:
                                 translated_text = expansion_response["content"]
                                 logging.info(f"Current text after reviser (quality) expanded: {translated_text[:100]}...")
