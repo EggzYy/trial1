@@ -27,16 +27,9 @@ This project provides a Python script (`trial_integrated4.py`) for translating d
     ```
 
 3.  **Install Dependencies**:
-    *   **Critical Missing Dependencies**: The current `requirements.txt` is missing several packages required by `trial_integrated4.py` (e.g., `pyautogen`, `ollama`, `python-docx`, `unstructured`, `retry`). You will need to install these manually:
-        ```bash
-        pip install pyautogen ollama python-docx unstructured retry tiktoken langchain-text-splitters tqdm PyYAML
-        # Add any other missing ones based on errors at runtime.
-        ```
-    *   Then, install the remaining listed dependencies (though some might be redundant or for `app.py`):
-        ```bash
-        pip install -r requirements.txt
-        ```
-    *(Automated modification of `requirements.txt` failed due to tool limitations.)*
+    ```bash
+    pip install -r requirements.txt
+    ```
 
 4.  **Configure `trial_integrated4.py` (Manual Steps Required)**:
     *   **NGROK Setup (Crucial for Local LLMs)**:
@@ -76,7 +69,6 @@ Currently, the script runs with hardcoded input and output file paths due to lim
 ## Limitations & Future Work
 
 *   **Configuration**: Settings are hardcoded. External configuration (e.g., `config.yaml` or CLI args) is needed.
-*   **Dependency Management**: `requirements.txt` needs to be corrected.
 *   **Error Handling**: Could be more specific.
 *   **Testing**: Meaningful unit tests for existing logic are missing.
 *   **Modularity**: `trial_integrated4.py` is monolithic.
