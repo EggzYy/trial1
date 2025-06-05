@@ -2,7 +2,7 @@ import os
 os.environ['TF_ENABLE_ONEDNN_OPTS'] ="0"
 os.environ['AUTOGEN_USE_DOCKER'] = "False"
 import autogen
-from typing import List, Tuple, Dict, Callable
+from typing import Any, List, Tuple, Dict, Callable
 import logging
 import time
 from dataclasses import dataclass
@@ -176,7 +176,7 @@ class OpenAI(OpenAICompatible):
         logging.info(f"OpenAI class initialized with base_url: {self.base_url}")
 
 # --- Helper Function for Get Completion with Retry ---
-def get_completion_with_retry(provider: OpenAI, prompt: str, system_message: str, **kwargs: None) -> str:
+def get_completion_with_retry(provider: OpenAI, prompt: str, system_message: str, **kwargs: Any) -> str:
     """Wrapper function to retry get_completion in case of ReadError."""
     try:
         response_content, _ = provider.get_completion(prompt, system_message, **kwargs) #Get response
