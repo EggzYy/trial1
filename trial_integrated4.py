@@ -1417,7 +1417,7 @@ class UniversalTranslator:
             return translated_text
 
 def read_file(file_path: str) -> List[Dict]:
-    """Reads text from a file, handling PDF and DOCX, preserving structure."""
+    """Reads text from a file, handling PDF, DOCX, and plain text, preserving structure."""
     if file_path.lower().endswith(".pdf"):
         try:
             elements = partition(filename=file_path)
